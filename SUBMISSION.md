@@ -6,8 +6,8 @@ Student assessment deliverable document containing project links, key prompts, a
 
 ## 1. Project Links
 
-- **GitHub Repository URL:** `[PLACEHOLDER: Insert your repository URL here, e.g., https://github.com/username/book-tracker]`
-- **Live Website URL (GitHub Pages):** `[PLACEHOLDER: Insert your GitHub Pages URL here, e.g., https://username.github.io/book-tracker/]`
+- **GitHub Repository URL:** `https://github.com/sijomonps/Ips_Assesment`
+- **Live Website URL (GitHub Pages):** `https://sijomonps.github.io/Ips_Assesment/ `
 
 ---
 
