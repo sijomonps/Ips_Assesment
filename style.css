@@ -1,0 +1,391 @@
+/* --- Clean & Minimalist Design System --- */
+:root {
+  /* Neutral Palette */
+  --bg-color: #fafbfc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-light: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  
+  /* Primary & Accent */
+  --primary-color: #1e293b;
+  --primary-hover: #0f172a;
+  --focus-ring: rgba(30, 41, 59, 0.15);
+  --error-color: #dc2626;
+
+  /* Minimal Status Colors (soft, desaturated) */
+  --status-toread-bg: #f1f5f9;
+  --status-toread-text: #475569;
+  --status-reading-bg: #fef9c3;
+  --status-reading-text: #854d0e;
+  --status-finished-bg: #ecfdf5;
+  --status-finished-text: #065f46;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-full: 9999px;
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Centered Container */
+.app-container {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Minimal Header */
+.app-header {
+  margin-bottom: 28px;
+}
+
+.app-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Minimal Card Container */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  padding: 22px;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+}
+
+.required {
+  color: var(--error-color);
+}
+
+input[type="text"],
+input[type="search"],
+select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Input Error Highlight */
+input.input-error {
+  border-color: var(--error-color);
+}
+
+input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  min-height: 1.1rem;
+}
+
+/* Minimalist Button */
+.btn {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Minimalist Status Counts Bar */
+.status-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.count-badge {
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.count-badge strong {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.count-badge.count-to-read {
+  background-color: var(--status-toread-bg);
+  color: var(--status-toread-text);
+}
+
+.count-badge.count-reading {
+  background-color: var(--status-reading-bg);
+  color: var(--status-reading-text);
+}
+
+.count-badge.count-finished {
+  background-color: var(--status-finished-bg);
+  color: var(--status-finished-text);
+}
+
+/* Search Box */
+.search-group {
+  margin-bottom: 16px;
+}
+
+.search-input {
+  background-color: #fafbfc;
+  border: 1px solid var(--border-subtle);
+}
+
+.search-input:focus {
+  background-color: #ffffff;
+}
+
+/* Book List (Clean, Divider-based Rows instead of chunky boxed cards) */
+.book-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.15s ease;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-info {
+  flex: 1;
+  padding-right: 12px;
+}
+
+.book-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+.book-author {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+  word-break: break-word;
+}
+
+/* Book Action Controls */
+.book-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Inline Minimal Status Dropdown */
+select.status-select {
+  width: auto;
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+select.status-select:focus {
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.status-to-read {
+  background-color: var(--status-toread-bg);
+  color: var(--status-toread-text);
+}
+
+.status-reading {
+  background-color: var(--status-reading-bg);
+  color: var(--status-reading-text);
+}
+
+.status-finished {
+  background-color: var(--status-finished-bg);
+  color: var(--status-finished-text);
+}
+
+/* Minimal Delete Button */
+.btn-delete {
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  padding: 4px 6px;
+  font-size: 0.775rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  color: var(--error-color);
+  background-color: #fee2e2;
+  outline: none;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 32px 12px;
+  font-size: 0.875rem;
+}
+
+/* Screen reader only utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .book-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 2px;
+  }
+
+  .book-info {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .book-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  select.status-select {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .btn-delete {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
